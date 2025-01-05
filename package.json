@@ -1,0 +1,29 @@
+{
+  "name": "bitProject",
+  "version": "1.0.0",
+  "description": "A lightweight and efficient BitTorrent Client built from Scratch.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notkhorii/bitProject.git"
+  },
+  "keywords": [
+    "BitTorrent",
+    "Torrent",
+    "Client",
+    "P2P",
+    "File",
+    "Sharing",
+    "Downloader",
+    "Networking"
+  ],
+  "author": "Keanu Vassell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notkhorii/bitProject/issues"
+  },
+  "homepage": "https://github.com/notkhorii/bitProject#readme"
+}
