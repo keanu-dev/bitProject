@@ -51,6 +51,11 @@ A lightweight and efficient BitTorrent client built from scratch, designed for s
 
 ## Roadmap
 
+- [ ] Build the foundation of the BitTorrent protocol implementation.
+- [ ] Implement bencoding and parsing of torrent files.
+- [ ] Establish peer connections and handshake protocols.
+- [ ] Add functionality for downloading file chunks from peers.
+- [ ] Verify data integrity using hash checks.
 - [ ] Add support for encrypted connections.
 - [ ] Implement trackerless torrenting (DHT support).
 - [ ] Enhance UI/UX with additional controls and visualizations.
