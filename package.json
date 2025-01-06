@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/notkhorii/bitProject#readme",
   "dependencies": {
-    "bencode": "^4.0.0"
+    "bencodejs": "^1.0.0",
+    "bitProject": "file:"
   }
 }
