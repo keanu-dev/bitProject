@@ -12,20 +12,18 @@
 /** NOTE: url library is no longer required for url parsing apparently */
 const dgram = require('dgram')
 const bufferEncode = require('buffer').Buffer
-const torrentParser = require('./torrent-Parser')
+const torrentParser = require('./utils/torrent-parser')
 const util = require('./utils/util')
 const crypto = require('crypto')
 
 function getPeers(torrent, callback){
 
 
-    const url = new URL(torrent.announce.toString())        /* NOTE: the url standard node libary's parse method is deprecated
-                                                                    apparently this is the new way to parse urls */
-
-
+    
     const socket = dgram.createSocket('udp4')
 
     // NOTE: step 1 send connection request
+    const url = new URL(torrent.announce.toString())        
     udpSend(socket,buildConnReq(), url)
 
     socket.on('message', (res) =>{
@@ -48,7 +46,9 @@ function getPeers(torrent, callback){
 
 
 function udpSend(socket, message, rawUrl, callback=()=>{}) {
-  const url = urlParse(rawUrl);
+  const url = new URL(torrent.announce.toString())        /* NOTE: the url standard node libary's parse method is deprecated
+                                                                    apparently this is the new way to parse urls */
+
   socket.send(message, 0, message.length, url.port, url.host, callback);
 }
 

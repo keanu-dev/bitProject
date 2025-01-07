@@ -5,8 +5,6 @@
 // const torrent = bencodeParser(fs.readFileSync('./src/dummy/puppy.torrent'))
 
 const { getPeers }  = require('./src/tracker');
-const fs = require('fs');
-const bencode = require('bencodejs');
 const torrentParser = require('./src/utils/torrent-parser');
 // const torrent = fs.readFileSync('./dummy/puppy.torrent');
 

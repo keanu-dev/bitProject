@@ -26,4 +26,3 @@ const infoHash = (torrent) => {
 
 
 module.exports = {open, size, infoHash}
-k
