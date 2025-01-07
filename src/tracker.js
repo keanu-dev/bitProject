@@ -29,14 +29,14 @@ function getPeers(torrent, callback){
     udpSend(socket,buildConnReq(), url)
 
     socket.on('message', (res) =>{
-        if (respType(res) === 'connect') {
+        if (resType(res) === 'connect') {
             // NOTE: step 2 receive and parse response
             const connRes = parseConnRes(res);
 
             // NOTE: step 3 send announce request
             const announceReq = buildAnnounceReq(connRes.connectionId, torrent)
             udpSend(socket, announceReq, url)
-        } else if(respType(res) === 'announce') {
+        } else if(resType(res) === 'announce') {
             // NOTE: step 4 parse announce response
             const announceRes = parseAnnounceRes(res)
             // NOTE: step 5 pass peers to callback
@@ -52,7 +52,7 @@ function udpSend(socket, message, rawUrl, callback=()=>{}) {
   socket.send(message, 0, message.length, url.port, url.host, callback);
 }
 
-function respType(res) {
+function resType(res) {
   // ...
     const action = resp.readUInt32BE(0);
   if (action === 0) return 'connect';
