@@ -1,14 +1,17 @@
 
 const fs = require('fs')
-
 const bencode = require('bencodejs');
+const {toBufferBE} = require('bigint-buffer')
+ 
 const open = (filepath) =>{
     return bencode.decode(fs.readFileSync(filepath), 'utf8'); /* NOTE: you can also pass the encode Schema as a second
                                                                                                argument in the decode method instead of passing it as a parameter when converting to string*/
 }
 
 const size = (torrent) => {
+    const size = torrent.info.files ? torrent.info.files.map(file => file.length).reduce((a, b) => a + b) : torrent.info.length;
 
+    return toBufferBE(size, 8)
 }
 const infoHash = (torrent) => {
     /* NOTE: to create torrents info hash, we'll pass the info property through 
@@ -23,3 +26,4 @@ const infoHash = (torrent) => {
 
 
 module.exports = {open, size, infoHash}
+k

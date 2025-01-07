@@ -28,6 +28,7 @@
   "homepage": "https://github.com/notkhorii/bitProject#readme",
   "dependencies": {
     "bencodejs": "^1.0.0",
+    "bigint-buffer": "^1.1.5",
     "bitProject": "file:"
   }
 }
