@@ -46,7 +46,7 @@ function getPeers(torrent, callback){
 
 
 function udpSend(socket, message, rawUrl, callback=()=>{}) {
-  const url = new URL(torrent.announce.toString())        /* NOTE: the url standard node libary's parse method is deprecated
+  const url = new URL(rawUrl)        /* NOTE: the url standard node libary's parse method is deprecated
                                                                     apparently this is the new way to parse urls */
 
   socket.send(message, 0, message.length, url.port, url.host, callback);
